@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Add Home</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* Navbar */
+      .navbar {
+        background: linear-gradient(90deg, #4a90e2, #357abd);
+        padding: 12px 30px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+      }
+      .navbar a {
+        color: white;
+        text-decoration: none;
+        margin: 0 18px;
+        font-weight: 600;
+        font-size: 1.1rem;
+        position: relative;
+        transition: color 0.3s ease;
+      }
+      .navbar a:hover {
+        color: #ffb347;
+      }
+      .navbar a::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        background: #ffb347;
+        left: 0;
+        bottom: -5px;
+        transition: width 0.3s ease;
+      }
+      .navbar a:hover::after {
+        width: 100%;
+      }
+      .brand {
+        color: white;
+        font-size: 28px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        user-select: none;
+        text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+        cursor: default;
+      }
+
+      /* Form container */
+      .form-container {
+        background: white;
+        max-width: 500px;
+        margin: 60px auto 40px;
+        padding: 40px 35px;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        color: #2e3a59;
+      }
+
+      .form-container h2 {
+        margin-bottom: 30px;
+        font-weight: 700;
+        font-size: 2rem;
+        background: linear-gradient(90deg, #ff6a88, #ffb347);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: gradientText 5s ease infinite alternate;
+        text-align: center;
+      }
+
+      /* Input styles */
+      input[type="text"] {
+        width: 100%;
+        padding: 14px 18px;
+        margin-bottom: 20px;
+        font-size: 1rem;
+        border-radius: 8px;
+        border: 1.5px solid #ccc;
+        transition: border-color 0.3s ease;
+        box-sizing: border-box;
+      }
+      input[type="text"]:focus {
+        outline: none;
+        border-color: #ffb347;
+        box-shadow: 0 0 8px rgba(255, 179, 71, 0.5);
+      }
+
+      /* Submit button */
+      button[type="submit"] {
+        width: 100%;
+        padding: 14px 0;
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: white;
+        background: linear-gradient(90deg, #ff6a88, #ffb347);
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+        box-shadow: 0 5px 15px rgba(255, 106, 136, 0.4);
+      }
+      button[type="submit"]:hover {
+        background: linear-gradient(90deg, #ffb347, #ff6a88);
+        box-shadow: 0 7px 20px rgba(255, 179, 71, 0.6);
+      }
+
+      @keyframes gradientText {
+        0% {
+          background-position: 0% 50%;
+        }
+        100% {
+          background-position: 100% 50%;
+        }
+      }
+
+      /* Responsive */
+      @media (max-width: 600px) {
+        .form-container {
+          margin: 40px 20px;
+          padding: 30px 20px;
+        }
+        .form-container h2 {
+          font-size: 1.6rem;
+        }
+        input[type="text"] {
+          font-size: 0.9rem;
+          padding: 12px 15px;
+        }
+        button[type="submit"] {
+          font-size: 1rem;
+          padding: 12px 0;
+        }
+        .navbar a {
+          margin: 0 10px;
+          font-size: 1rem;
+        }
+        .navbar {
+          padding: 12px 15px;
+        }
+        .brand {
+          font-size: 22px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="brand">Apna Ghar</div>
+      <div>
+        <a href="/">Home</a>
+        <a href="Add-Home">Add Home</a>
+        <a href="ContactUs">Contact Us</a>
+      </div>
+    </nav>
+
+    <!-- Form Container -->
+    <div class="form-container">
+      <h2>Add a New Home</h2>
+      <form action="Add-Home" method="post">
+        <input
+          type="text"
+          name="homeName"
+          placeholder="Enter Home Name"
+          required
+        />
+        <input type="text" name="price" placeholder="Enter Price" required />
+        <input
+          type="text"
+          name="location"
+          placeholder="Enter Location"
+          required
+        />
+        <input type="text" name="rating" placeholder="Enter Rating" required />
+        <input
+          type="text"
+          name="photo"
+          placeholder="Enter Photo URL"
+          required
+        />
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Success!</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .navbar {
+        background: linear-gradient(90deg, #4a90e2, #357abd);
+        padding: 12px 30px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+      }
+
+      .navbar a {
+        color: white;
+        text-decoration: none;
+        margin: 0 15px;
+        font-weight: 600;
+        font-size: 1.1rem;
+        position: relative;
+        transition: color 0.3s ease;
+      }
+
+      .navbar a:hover {
+        color: #ffb347;
+      }
+
+      .navbar a::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        background: #ffb347;
+        left: 0;
+        bottom: -5px;
+        transition: width 0.3s ease;
+      }
+
+      .navbar a:hover::after {
+        width: 100%;
+      }
+
+      .brand {
+        color: white;
+        font-size: 28px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        user-select: none;
+        text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+      }
+
+      .success-container {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .message-box {
+        background: white;
+        padding: 40px 50px;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(16, 185, 129, 0.25);
+        text-align: center;
+        animation: fadeIn 0.5s ease-in-out;
+      }
+
+      .message-box h1 {
+        color: #10b981;
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+      }
+
+      .message-box p {
+        color: #065f46;
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+      }
+
+      .message-box a {
+        display: inline-block;
+        text-decoration: none;
+        background: #10b981;
+        color: white;
+        padding: 12px 25px;
+        border-radius: 8px;
+        font-weight: 600;
+        transition: background 0.3s ease;
+      }
+
+      .message-box a:hover {
+        background-color: #0ea672;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(15px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @media (max-width: 600px) {
+        .message-box {
+          padding: 30px 20px;
+        }
+
+        .message-box h1 {
+          font-size: 2rem;
+        }
+
+        .message-box p {
+          font-size: 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <div class="navbar">
+      <div class="brand">Apna Ghar</div>
+      <div>
+        <a href="/">Home</a>
+        <a href="Add-Home">Add Home</a>
+        <a href="ContactUs">Contact Us</a>
+      </div>
+    </div>
+
+    <!-- Success Message -->
+    <div class="success-container">
+      <div class="message-box">
+        <h1>Success!</h1>
+        <p>The home has been added successfully.</p>
+        <a href="/">Go Back Home</a>
+      </div>
+    </div>
+  </body>
+</html>
